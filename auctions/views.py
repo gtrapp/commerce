@@ -11,6 +11,9 @@ def listing(request, id):
     in_watchlist = request.user in listing_data.watchlist.all()
     all_comments = Comment.objects.filter(listing=listing_data)
     is_owner = request.user.username == listing_data.user.username
+    
+    print(f"hello {is_owner}")
+    
     return render(request, "auctions/listing.html", {
         "listing": listing_data,
         "in_watchlist": in_watchlist,
