@@ -1,4 +1,4 @@
- {% extends "auctions/layout.html" %}
+{% extends "auctions/layout.html" %}
 
 {% block body %}
     <div>
@@ -14,7 +14,6 @@
             {% endif %}
         {% endif %}
     </div>
-
 
          {% if not listing.is_active and user == listing.price.user %}
          <div class="alert alert-success" role="alert">
@@ -67,7 +66,6 @@
         {% endif %}
         <p>{{ message }}</p>
 
-
         <h2>Comments</h2>
 
         {% if user.is_authenticated and not is_owner %}
@@ -89,6 +87,6 @@
                     <br />
                     <p>Member: {{ comment.author  }}</p>
                 </li>
-            {% endfor  %}
+            {% endfor %}
         </ul>
 {% endblock %}

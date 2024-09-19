@@ -79,8 +79,9 @@ def add_comment(request, id):
         message=message
     )
     new_comment.save()
+    
 
-    return HttpResponseRedirect(reverse("listing", args=(id, )))
+    return HttpResponsdeRedirect(reverse("listing", args=(id, )))
 
 
 def watchlist(request):
@@ -97,6 +98,7 @@ def remove_watchlist(request, id):
     return HttpResponseRedirect(reverse("listing", args=(id, )))
 
 def add_watchlist(request, id):
+    # Listing.objects.get(pk=id)
     listing_data = Listing.objects.get(pk=id)
     current_user = request.user
     listing_data.watchlist.add(current_user)
